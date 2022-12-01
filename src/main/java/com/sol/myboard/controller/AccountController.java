@@ -2,6 +2,7 @@ package com.sol.myboard.controller;
 
 
 import com.sol.myboard.model.User;
+import com.sol.myboard.repository.UserRepository;
 import com.sol.myboard.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

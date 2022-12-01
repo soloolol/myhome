@@ -15,33 +15,21 @@
 
 
 <body class="text-center form-signin m-auto">
-
-<form class="w-100" th:action="@{/account/signup}" method="post">
-    <!--        <img class="mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">-->
-    <h1 class="h3 mb-3 fw-normal">Sign up</h1>
-    <div th:if="${param.error}" class="alert alert-danger" role="alert">
-        Invalid username and password.
-    </div>
-    <div th:if="${param.logout}" class="alert alert-primary" role="alert">
-        You have been logged out.
-    </div>
-    <div class="form-floating">
-        <input type="text" class="form-control" id="username" name="username" placeholder="Username">
-        <label for="username">Username</label>
-    </div>
-    <div class="form-floating">
-        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
-        <label for="password">Password</label>
-    </div>
-
-    <div class="checkbox mb-3">
-        <label>
-            <input type="checkbox" value="remember-me"> Remember me
-        </label>
-    </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">회원가입</button>
-    <!--        <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>-->
-</form>
+    <form class="w-100" th:action="@{/account/signup}" method="post">
+        <!--        <img class="mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">-->
+        <h1 class="h3 mb-3 fw-normal"><a class="nav-link-color-black" th:href="@{/}">Sign up</a></h1>
+        <div th:if="${param.error}" class="alert alert-danger" role="alert">
+            Invalid username and password.
+        </div>
+        <div class="form-floating">
+            <input type="text" class="form-control" id="username" name="username" placeholder="Username">
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">회원가입</button>
+        <!--        <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>-->
+    </form>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

@@ -24,7 +24,7 @@
             <tr th:each="board : ${boards}">
                 <td th:text="${board.id}">dbID</td>
                 <td th:text="${board.title}" th:onclick="|location.href='@{/board/read(id=${board.id})}'|">제목</td>
-                <td>sol</td>
+                <td th:text="${board.user.username}">sol</td>
             </tr>
             </tbody>
         </table>

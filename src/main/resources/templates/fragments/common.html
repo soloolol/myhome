@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:fragment="head(title)">
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -31,6 +31,16 @@
                     <a class="nav-link" href="/board/list" th:href="@{/board/list}">Board<span class="sr-only" th:if="${menu} == 'board'">(current)</span></a>
                 </li>
             </ul>
+
+            <a class="btn btn-secondary my-2 mr-1 my-sm-0" th:href="@{/account/login}"
+               sec:authorize="!isAuthenticated()">Login</a>
+            <a class="btn btn-secondary my-2 my-sm-0" th:href="@{/account/signup }"
+               sec:authorize="!isAuthenticated()">Signup</a>
+            <form class="form-inline my-2 my-lg-0" th:action="@{/logout}" method="post" sec:authorize="isAuthenticated()">
+                <span class="text-white mx-2" sec:authentication="name">userID</span>
+                <span class="text-white mx-2" sec:authentication="principal.authorities">authority</span>
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Logout</button>
+            </form>
         </div>
     </nav>
 
